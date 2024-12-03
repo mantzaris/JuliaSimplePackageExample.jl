@@ -1,0 +1,13 @@
+name = "JuliaSimplePackageExample"
+uuid = "a09ea43a-6e6a-4478-9608-d5946532175f"
+authors = ["Alexander V. Mantzaris"]
+version = "1.0.0-DEV"
+
+[compat]
+julia = "1.6"
+
+[extras]
+Test = "8dfed614-e22c-5e08-85e1-65c5234f0b40"
+
+[targets]
+test = ["Test"]
