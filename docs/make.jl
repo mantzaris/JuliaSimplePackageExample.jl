@@ -9,7 +9,7 @@ makedocs(;
     sitename="JuliaSimplePackageExample.jl",
     format=Documenter.HTML(;
         canonical="https://mantzaris.github.io/JuliaSimplePackageExample.jl",
-        edit_link="main",
+        edit_link="master",
         assets=String[],
     ),
     pages=[
@@ -19,5 +19,5 @@ makedocs(;
 
 deploydocs(;
     repo="github.com/mantzaris/JuliaSimplePackageExample.jl",
-    devbranch="main",
+    devbranch="master",
 )
