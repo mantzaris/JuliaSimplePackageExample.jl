@@ -33,3 +33,13 @@ Pkg.test()
 ```
 
 then in the terminal at that directory `julia --project=docs docs/make.jl` (_gives a warning as it is a local view_)
+
+### Local Testing
+
+To test locally before pushing
+
+```
+using Pkg
+Pkg.activate("path/to/JuliaSimplePackageExample.jl")
+Pkg.test()
+```
