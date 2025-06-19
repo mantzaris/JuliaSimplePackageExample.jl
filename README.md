@@ -13,11 +13,14 @@ julia> tpl = Template(
            user="mantzaris",
            authors=["Alexander V. Mantzaris"],
            dir="~/Documents/repos",
-	   julia=VersionNumber("1.6"),
+           julia = v"1.8", # or leave out for, auto-min-version
            plugins=[
                Git(),
                GitHubActions(),
                Documenter{GitHubActions}(),
+               License(; name = "MIT"),
+               TagBot(),
+               CompatHelper(),
            ],
        )
 
@@ -29,10 +32,17 @@ then go into the directory and in another REPL:
 ```
 import Pkg
 Pkg.activate(".")
+Pkg.instantiate()
 Pkg.test()
 ```
 
-then in the terminal at that directory `julia --project=docs docs/make.jl` (_gives a warning as it is a local view_)
+then build docs, 
+
+```
+julia --project=docs -e 'using Pkg; Pkg.instantiate(); include("docs/make.jl")'
+```
+
+or via in the terminal at that directory `julia --project=docs docs/make.jl` (_gives a warning as it is a local view_)
 
 ### Local Testing
 
@@ -40,6 +50,6 @@ To test locally before pushing
 
 ```
 using Pkg
-Pkg.activate("path/to/JuliaSimplePackageExample.jl")
+Pkg.activate("path/to/JuliaSimplePackageExample.jl") # eg Pkg.activate(".")
 Pkg.test()
 ```

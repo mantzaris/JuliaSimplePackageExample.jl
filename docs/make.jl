@@ -19,5 +19,4 @@ makedocs(;
 
 deploydocs(;
     repo="github.com/mantzaris/JuliaSimplePackageExample.jl",
-    devbranch="master",
 )
